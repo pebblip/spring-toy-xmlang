@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xsd:schema xmlns="http://www.sample.com/xmlang"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sample.com/xmlang"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:element name="program">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="block" />
+			</xsd:sequence>
+			<xsd:attribute name="argument" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="var">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" use="required" />
+			<xsd:attributeGroup ref="exp" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="return">
+		<xsd:complexType>
+			<xsd:attributeGroup ref="exp" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="if">
+		<xsd:complexType>			
+			<xsd:sequence>
+				<xsd:group ref="block" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="exp" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="while">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:group ref="block" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="exp" />
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:attributeGroup name="exp">
+		<xsd:attribute name="expression" type="xsd:string" use="required" />
+	</xsd:attributeGroup> 
+
+	<xsd:group name="block">
+		<xsd:sequence>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="var" />
+				<xsd:element ref="if" />
+				<xsd:element ref="while" />
+				<xsd:element ref="return" />
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:group>
+
+</xsd:schema>

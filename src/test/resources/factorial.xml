@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xmlang="http://www.sample.com/xmlang"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.sample.com/xmlang http://www.sample.com/xmlang.xsd">    
+	
+	<xmlang:program argument="in">
+		<xmlang:var name="n" expression="1"/>
+		<xmlang:var name="result" expression="1" />
+		<xmlang:while expression="#n le #in" >			
+			<xmlang:var name="result" expression="#n * #result" />
+			<xmlang:var name="n" expression="#n + 1" />
+		</xmlang:while>
+		<xmlang:return expression="#result" />
+	</xmlang:program>
+    
+
+</beans>
