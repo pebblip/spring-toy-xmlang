@@ -16,7 +16,7 @@ public class ProgramEnvironment {
 
 	public EvaluationContext getEvaluationContext() {
 		return evaluationContext;
-	}	
+	}
 
 	public boolean isTerminate() {
 		return isTerminate;

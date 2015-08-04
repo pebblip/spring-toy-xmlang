@@ -11,8 +11,7 @@ import sample.program.Program;
 public class ProgramBeanDefinitionParser extends AbstractBeanDefinitionParser {
 
 	@Override
-	protected AbstractBeanDefinition parseInternal(Element element,
-			ParserContext parserContext) {
+	protected AbstractBeanDefinition parseInternal(Element element, ParserContext parserContext) {
 		BeanDefinitionBuilder bean = BeanDefinitionBuilder.rootBeanDefinition(Program.class);
 
 		bean.addConstructorArgValue(element.getAttribute("argument"));

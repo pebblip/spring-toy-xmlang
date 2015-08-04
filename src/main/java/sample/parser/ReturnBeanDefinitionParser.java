@@ -7,13 +7,12 @@ import org.w3c.dom.Element;
 import sample.program.ReturnStatement;
 
 public class ReturnBeanDefinitionParser extends AbstractSingleBeanDefinitionParser {
-	
-	protected Class<?> getBeanClass(Element element) {
-        return ReturnStatement.class;
-    }
 
-    protected void doParse(Element element, BeanDefinitionBuilder bean) {						
-		bean.addConstructorArgValue(element.getAttribute("expression"));
+	protected Class<?> getBeanClass(Element element) {
+		return ReturnStatement.class;
 	}
 
+	protected void doParse(Element element, BeanDefinitionBuilder bean) {
+		bean.addConstructorArgValue(element.getAttribute("expression"));
+	}
 }

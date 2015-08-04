@@ -9,9 +9,9 @@ public class ProgramTest {
 	public static void main(String[] args) {
 		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("factorial.xml")) {
 			Program p = context.getBean(Program.class);
-			Object result1 = p.evaluation(3);
+			Object result1 = p.evaluate(3);
 			System.out.println("result : " + result1.toString());
-			Object result2 = p.evaluation(10);
+			Object result2 = p.evaluate(10);
 			System.out.println("result : " + result2.toString());
 		}
 	}

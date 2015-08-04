@@ -18,5 +18,6 @@ public class ReturnStatement implements Statement {
 		ExpressionParser parser = new SpelExpressionParser();
 		Object value = parser.parseExpression(expression).getValue(context.getEvaluationContext());
 		context.setReturnValue(value);
+		context.setTerminate(true);
 	}
 }

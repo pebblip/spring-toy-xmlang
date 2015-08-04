@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Block implements Statement {
 	private final List<Statement> statements = new ArrayList<>();
-	
+
 	public List<Statement> statements() {
 		return statements;
 	}
@@ -20,8 +20,9 @@ public class Block implements Statement {
 	@Override
 	public void evaluate(ProgramEnvironment context) {
 		statements.forEach(s -> {
-			if (context.isTerminate()) return;
-			s.evaluate(context);	
+			if (context.isTerminate())
+				return;
+			s.evaluate(context);
 		});
 	}
 }

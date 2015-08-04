@@ -23,7 +23,7 @@ public class Program {
 		this.block = block;
 	}
 
-	public Object evaluation(Object argument) {
+	public Object evaluate(Object argument) {
 		EvaluationContext evaluationContext = new StandardEvaluationContext();
 		evaluationContext.setVariable(argumentName, argument);
 		ProgramEnvironment context = new ProgramEnvironment(evaluationContext);
